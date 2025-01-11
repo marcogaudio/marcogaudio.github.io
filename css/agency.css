@@ -997,9 +997,15 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 }
 
 
-
-
-
+#waves-js{
+  width: 100%;
+  height: 800px;
+  background-color: white;
+  background-image: url('');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
 
 /* ------------------------------------------------------------------------------------------------------------------- */
 /* BLOG SECTION

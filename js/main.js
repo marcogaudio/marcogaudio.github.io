@@ -7,6 +7,10 @@ import { initNav } from './modern-nav.js';
 import { initPortfolio } from './modern-portfolio.js';
 import { initAnimations } from './modern-animations.js';
 import { initDarkMode } from './dark-mode.js';
+import { initMouseGlow } from './mouse-glow.js';
+import { initTypingEffect } from './typing-effect.js';
+import { initCounters } from './counters.js';
+import { initDotNav } from './dot-nav.js';
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,6 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initAnimations();
   initDarkMode();
   initScrollProgress();
+  initMouseGlow();
+  initTypingEffect();
+  initCounters();
+  initDotNav();
 });
 
 // Scroll progress bar

@@ -109,6 +109,17 @@
   animation-name: scaleIn;
 }
 
+/* Typing cursor blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Skill bar fill */
+.will-animate.animated[data-animate="skillBar"] .skill-fill {
+  width: var(--skill-pct, 0%) !important;
+}
+
 /* Reduced motion override */
 @media (prefers-reduced-motion: reduce) {
   .will-animate {

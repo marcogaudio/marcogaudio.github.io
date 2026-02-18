@@ -23,6 +23,13 @@ export function initAnimations() {
 
         setTimeout(() => {
           el.classList.add('animated');
+
+          // Trigger skill bar fills
+          if (el.dataset.animate === 'skillBar') {
+            el.querySelectorAll('.skill-fill').forEach(bar => {
+              bar.style.width = bar.dataset.skillPct || '0%';
+            });
+          }
         }, parseInt(delay));
 
         observer.unobserve(el);

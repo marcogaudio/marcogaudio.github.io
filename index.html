@@ -245,6 +245,9 @@
             <a class="nav-link js-scroll-trigger" href="#description">Intro</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
           </li>
           <li class="nav-item">
@@ -267,7 +270,9 @@
     <p style="display:inline; font-size: 35px; padding-left: 10px">MARCO</p>
     <p style="display:inline; font-size: 35px">GAUDIO</p>
     <hr style="width: 250px; height: 2px; border:none;color:#333;background-color:rgba(255,255,255,0.3);">
-    <p style="font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 0.5rem;">Actuarial Pricing Analyst | Data Enthusiast</p>
+    <div class="typing-container">
+      <span class="typing-text" data-phrases="Actuarial Pricing Analyst|Data Enthusiast|Reinsurance Specialist">Actuarial Pricing Analyst</span><span class="typing-cursor" aria-hidden="true"></span>
+    </div>
     <br>
     <ul class="list-inline social-buttons">
       <li class="list-inline-item social-buttons">
@@ -298,7 +303,7 @@
 
   <!-- =======================  DESCRIPTION SECTION ======================= -->
 
-  <section id="description" class="bg-light" aria-label="About me">
+  <section id="description" class="bg-light" aria-label="About me" data-glow>
     <div class="container">
 
       <div class="row" data-animate="fadeInUp">
@@ -317,6 +322,59 @@
         </div>
       </div>
 
+      <div class="stats-row" data-animate="fadeInUp" data-animate-delay="200">
+        <div class="stat-item">
+          <span class="stat-number" data-count-to="4">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count-to="6">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count-to="3">0</span>
+          <span class="stat-label">Degrees</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =======================  SKILLS SECTION ======================= -->
+  <section id="skills" class="bg-light py-5" aria-label="Skills">
+    <div class="container">
+      <div class="text-center text-md-left mb-4" data-animate="fadeInUp">
+        <h2>Skills</h2>
+        <p>Technical competencies and tools I work with daily.</p>
+      </div>
+
+      <div class="skills-card" data-animate="skillBar" data-animate-delay="100">
+        <div class="skill-item">
+          <div class="skill-header"><span>R</span><span class="skill-pct">90%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-skill-pct="90%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span>Excel</span><span class="skill-pct">95%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-skill-pct="95%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span>SQL</span><span class="skill-pct">85%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-skill-pct="85%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span>Python</span><span class="skill-pct">80%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-skill-pct="80%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span>VBA</span><span class="skill-pct">75%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-skill-pct="75%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header"><span>Machine Learning</span><span class="skill-pct">70%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-skill-pct="70%"></div></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -415,7 +473,7 @@
 
   <!-- ======================== PORTFOLIO SECTION ============================ -->
 
-  <section class="bg-light" id="portfolio" aria-label="Portfolio">
+  <section class="bg-light" id="portfolio" aria-label="Portfolio" data-glow>
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center" data-animate="fadeInUp">
@@ -430,8 +488,14 @@
             <div class="project-card-body">
               <h5>ML-in-insurance-pricing</h5>
               <p>Machine learning techniques applied to non-life insurance pricing</p>
+              <div class="project-tags">
+                <span class="project-tag">GLM</span>
+                <span class="project-tag">Random Forest</span>
+                <span class="project-tag">XGBoost</span>
+              </div>
               <span class="project-lang"><span class="lang-dot" style="background:#198ce7;"></span> R</span>
             </div>
+            <div class="project-card-hover">View on GitHub &rarr;</div>
           </a>
         </div>
 
@@ -440,8 +504,14 @@
             <div class="project-card-body">
               <h5>SDO</h5>
               <p>Analysis of hospitalization data (SDO) in Italy</p>
+              <div class="project-tags">
+                <span class="project-tag">Data Analysis</span>
+                <span class="project-tag">Healthcare</span>
+                <span class="project-tag">R</span>
+              </div>
               <span class="project-lang"><span class="lang-dot" style="background:#e34c26;"></span> HTML</span>
             </div>
+            <div class="project-card-hover">View on GitHub &rarr;</div>
           </a>
         </div>
 
@@ -450,8 +520,14 @@
             <div class="project-card-body">
               <h5>Mortality_projections_Denmark</h5>
               <p>Mortality projections for Denmark (PFSS project)</p>
+              <div class="project-tags">
+                <span class="project-tag">Lee-Carter</span>
+                <span class="project-tag">Mortality</span>
+                <span class="project-tag">PFSS</span>
+              </div>
               <span class="project-lang"><span class="lang-dot" style="background:#e34c26;"></span> HTML</span>
             </div>
+            <div class="project-card-hover">View on GitHub &rarr;</div>
           </a>
         </div>
 
@@ -460,8 +536,14 @@
             <div class="project-card-body">
               <h5>treeBasedModels</h5>
               <p>Tree-based machine learning models</p>
+              <div class="project-tags">
+                <span class="project-tag">Decision Trees</span>
+                <span class="project-tag">Bagging</span>
+                <span class="project-tag">Boosting</span>
+              </div>
               <span class="project-lang"><span class="lang-dot" style="background:#f1e05a;"></span> JavaScript</span>
             </div>
+            <div class="project-card-hover">View on GitHub &rarr;</div>
           </a>
         </div>
 
@@ -470,8 +552,14 @@
             <div class="project-card-body">
               <h5>StatisticalModels</h5>
               <p>Statistical modeling and analysis projects</p>
+              <div class="project-tags">
+                <span class="project-tag">Regression</span>
+                <span class="project-tag">GLM</span>
+                <span class="project-tag">Bayesian</span>
+              </div>
               <span class="project-lang"><span class="lang-dot" style="background:#e34c26;"></span> HTML</span>
             </div>
+            <div class="project-card-hover">View on GitHub &rarr;</div>
           </a>
         </div>
 
@@ -480,8 +568,14 @@
             <div class="project-card-body">
               <h5>databases</h5>
               <p>Database management system (DBMS) projects</p>
+              <div class="project-tags">
+                <span class="project-tag">SQL</span>
+                <span class="project-tag">ER Modeling</span>
+                <span class="project-tag">DBMS</span>
+              </div>
               <span class="project-lang"><span class="lang-dot" style="background:#e34c26;"></span> HTML</span>
             </div>
+            <div class="project-card-hover">View on GitHub &rarr;</div>
           </a>
         </div>
 

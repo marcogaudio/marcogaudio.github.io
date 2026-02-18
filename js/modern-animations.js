@@ -24,12 +24,6 @@ export function initAnimations() {
         setTimeout(() => {
           el.classList.add('animated');
 
-          // Trigger skill bar fills
-          if (el.dataset.animate === 'skillBar') {
-            el.querySelectorAll('.skill-fill').forEach(bar => {
-              bar.style.width = bar.dataset.skillPct || '0%';
-            });
-          }
         }, parseInt(delay));
 
         observer.unobserve(el);
@@ -41,4 +35,22 @@ export function initAnimations() {
   });
 
   animatedElements.forEach(el => observer.observe(el));
+
+  // Skill bar fills — separate observer
+  const skillsCard = document.getElementById('skills-card');
+  if (skillsCard) {
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.querySelectorAll('.skill-fill').forEach(bar => {
+              bar.style.width = bar.dataset.skillPct || '0%';
+            });
+          }, 400);
+          skillObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    skillObserver.observe(skillsCard);
+  }
 }

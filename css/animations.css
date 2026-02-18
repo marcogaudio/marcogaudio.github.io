@@ -115,11 +115,6 @@
   50% { opacity: 0; }
 }
 
-/* Skill bar — fade in card, then fill bars */
-.will-animate.animated[data-animate="skillBar"] {
-  animation-name: fadeInUp;
-}
-
 /* Reduced motion override */
 @media (prefers-reduced-motion: reduce) {
   .will-animate {

@@ -1,0 +1,173 @@
+/* Micro-interactions */
+
+/* Button ripple hover */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--ripple-x, 50%) var(--ripple-y, 50%), rgba(255,255,255,0.3) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.btn:hover::after {
+  opacity: 1;
+}
+
+/* Link underline slide */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width var(--transition-base), left var(--transition-base);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Card hover lift (legacy, kept for compatibility) */
+.portfolio-item .portfolio-link {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.portfolio-item .portfolio-link:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Image fade-in on load */
+img[data-src] {
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+}
+
+img[data-src].loaded {
+  opacity: 1;
+}
+
+/* Scroll-down arrow bounce */
+.arrowlanding a {
+  display: inline-block;
+  animation: bounce 2s infinite;
+}
+
+/* Horizontal timeline interaction */
+.h-timeline-item {
+  transition: transform var(--transition-base);
+}
+
+.h-timeline-item:hover {
+  transform: translateY(-2px);
+}
+
+/* Social button hover */
+ul.social-buttons li a {
+  transition: transform var(--transition-base), background-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+ul.social-buttons li a:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Portfolio filter pills */
+#portfolio-button-container .btn {
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+}
+
+#portfolio-button-container .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Portfolio item transition for filtering */
+.portfolio-item {
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.portfolio-item.hiding {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+/* Project cards */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--color-bg-card, #fff);
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: var(--radius-lg, 16px);
+  text-decoration: none;
+  color: var(--color-text, #1a1a2e);
+  transition: transform var(--transition-base, 0.3s ease), box-shadow var(--transition-base, 0.3s ease);
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg, 0 10px 30px rgba(0,0,0,0.12));
+  text-decoration: none;
+  color: var(--color-text, #1a1a2e);
+}
+
+.project-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-card-body h5 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-primary, #2563eb);
+}
+
+.project-card-body p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted, #6c757d);
+  margin: 0 0 auto;
+  line-height: 1.5;
+}
+
+.project-lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--color-text-muted, #6c757d);
+  margin-top: 16px;
+}
+
+.lang-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+  width: 0%;
+}

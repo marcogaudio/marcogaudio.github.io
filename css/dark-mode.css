@@ -1,0 +1,124 @@
+/* Dark Mode Component Styles */
+
+/* Theme toggle button */
+.theme-toggle {
+  background: none;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-full);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: border-color var(--transition-base), transform var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle:hover {
+  border-color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.theme-toggle .icon-sun {
+  color: #fbbf24;
+  position: absolute;
+  transform: rotate(90deg) scale(0);
+  opacity: 0;
+}
+
+.theme-toggle .icon-moon {
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .theme-toggle .icon-sun {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+  transform: rotate(-90deg) scale(0);
+  opacity: 0;
+}
+
+/* Dark navbar */
+[data-theme="dark"] #mainNav {
+  background-color: var(--color-nav-bg);
+}
+
+[data-theme="dark"] #mainNav.navbar-shrink {
+  background-color: var(--color-nav-bg);
+}
+
+/* Dark sections */
+[data-theme="dark"] .bg-light {
+  background-color: var(--color-bg-alt) !important;
+}
+
+[data-theme="dark"] section {
+  background-color: var(--color-bg);
+}
+
+/* Dark cards & content */
+[data-theme="dark"] .timeline-content {
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .timeline-item:hover .timeline-content {
+  background-color: var(--color-surface);
+}
+
+[data-theme="dark"] .timeline-dot {
+  background-color: var(--color-bg-card);
+}
+
+[data-theme="dark"] .text-muted {
+  color: var(--color-text-muted) !important;
+}
+
+/* Dark modals */
+[data-theme="dark"] .modal-content {
+  background-color: var(--color-bg-card);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .close-modal .lr,
+[data-theme="dark"] .close-modal .lr .rl {
+  background-color: var(--color-text);
+}
+
+/* Dark portfolio */
+[data-theme="dark"] .portfolio-caption {
+  background-color: var(--color-bg-card);
+}
+
+/* Dark footer */
+[data-theme="dark"] footer {
+  background-color: var(--color-bg-alt);
+  color: var(--color-text-secondary);
+}
+
+[data-theme="dark"] footer .copyright {
+  color: var(--color-text-secondary);
+}
+
+/* Smooth theme transition */
+body,
+.bg-light,
+section,
+.modal-content,
+footer,
+.timeline-content,
+.timeline-dot,
+#mainNav,
+.portfolio-caption {
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base);
+}

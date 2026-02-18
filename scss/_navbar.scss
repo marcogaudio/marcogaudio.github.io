@@ -1,6 +1,8 @@
 // Styling for the navbar
 #mainNav {
-  background-color: $gray-900;
+  background-color: var(--color-nav-bg, $gray-900);
+  transition: all var(--transition-base, 0.3s ease);
+
   .navbar-toggler {
     font-size: 12px;
     right: 0;
@@ -8,19 +10,22 @@
     text-transform: uppercase;
     color: white;
     border: 0;
-    background-color: $primary;
+    background-color: var(--color-primary, $primary);
+    border-radius: var(--radius-md, 8px);
     @include heading-font;
   }
+
   .navbar-brand {
-    color: $primary;
+    color: var(--color-primary, $primary);
     @include script-font;
     &.active,
     &:active,
     &:focus,
     &:hover {
-      color: darken($primary, 10%);
+      color: var(--color-primary-dark);
     }
   }
+
   .navbar-nav {
     .nav-item {
       .nav-link {
@@ -28,31 +33,30 @@
         font-weight: 400;
         padding: 0.75em 0;
         letter-spacing: 1px;
-        color: white;
+        color: var(--color-nav-text, white);
         @include heading-font;
         &.active,
         &:hover {
-          color: $primary;
+          color: var(--color-primary, $primary);
         }
       }
     }
   }
 }
+
 @media(min-width:992px) {
   #mainNav {
     padding-top: 25px;
     padding-bottom: 25px;
-    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
-    -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
-    transition: padding-top 0.3s, padding-bottom 0.3s;
+    transition: padding var(--transition-base, 0.3s ease), background-color var(--transition-base, 0.3s ease);
     border: none;
     background-color: transparent;
+
     .navbar-brand {
       font-size: 1.75em;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
-      transition: all 0.3s;
+      transition: all var(--transition-base, 0.3s ease);
     }
+
     .navbar-nav {
       .nav-item {
         .nav-link {
@@ -60,10 +64,13 @@
         }
       }
     }
+
     &.navbar-shrink {
       padding-top: 0;
       padding-bottom: 0;
-      background-color: $gray-900;
+      background-color: var(--color-nav-bg, $gray-900);
+      box-shadow: var(--shadow-md);
+
       .navbar-brand {
         font-size: 1.25em;
         padding: 12px 0;

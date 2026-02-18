@@ -2,6 +2,8 @@
 body {
   overflow-x: hidden;
   @include body-font;
+  color: var(--color-text);
+  background-color: var(--color-bg);
 }
 
 p {
@@ -9,22 +11,18 @@ p {
 }
 
 a {
-  color: $primary;
+  color: var(--color-primary, $primary);
+  transition: color var(--transition-fast);
   &:hover {
-    color: darken($primary, 10%);
+    color: var(--color-primary-dark);
   }
 }
 
 .text-primary {
-  color: $primary !important;
+  color: var(--color-primary, $primary) !important;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   @include heading-font;
 }
@@ -32,12 +30,12 @@ h6 {
 section {
   padding: 100px 0;
   h2.section-heading {
-    font-size: 40px;
+    font-size: var(--text-3xl, 40px);
     margin-top: 0;
     margin-bottom: 15px;
   }
   h3.section-subheading {
-    font-size: 16px;
+    font-size: var(--text-base, 16px);
     font-weight: 400;
     font-style: italic;
     margin-bottom: 75px;
@@ -55,6 +53,8 @@ section {
 .btn {
   @include heading-font;
   font-weight: 700;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
 }
 
 .btn-xl {
@@ -63,36 +63,31 @@ section {
 }
 
 .btn-primary {
-  background-color: $primary;
-  border-color: $primary;
+  background-color: var(--color-primary, $primary);
+  border-color: var(--color-primary, $primary);
+  color: white;
   &:active,
   &:focus,
   &:hover {
-    background-color: darken($primary, 7.5%) !important;
-    border-color: darken($primary, 7.5%) !important;
+    background-color: var(--color-primary-dark) !important;
+    border-color: var(--color-primary-dark) !important;
     color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
   }
   &:active,
   &:focus {
-    box-shadow: 0 0 0 0.2rem rgba(254, 209, 55,.5) !important;
+    box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, .5) !important;
   }
 }
 
 // Highlight color customization
-::-moz-selection {
-  background: $primary;
-  text-shadow: none;
-}
-
 ::selection {
-  background: $primary;
+  background: var(--color-primary, $primary);
+  color: white;
   text-shadow: none;
 }
 
 img::selection {
-  background: transparent;
-}
-
-img::-moz-selection {
   background: transparent;
 }

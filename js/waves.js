@@ -1,81 +1,156 @@
 /**
- * Animated Waves using SVG and JavaScript
- * Inspired by the simplicity of particles.js
+ * Floating Particles Background
+ * Subtle drifting dots with parallax depth effect
+ * Respects prefers-reduced-motion, pauses when tab is hidden
  */
 
-// Append an SVG wave element to a target container
-function createWaveBackground(targetId) {
+function createParticleBackground(targetId) {
   const container = document.getElementById(targetId);
+  if (!container) return;
 
-  if (!container) {
-    console.error(`Container with ID '${targetId}' not found.`);
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const canvas = document.createElement('canvas');
+  canvas.setAttribute('aria-hidden', 'true');
+  canvas.style.width = '100%';
+  canvas.style.height = '100%';
+  container.appendChild(canvas);
+
+  const ctx = canvas.getContext('2d');
+  let width, height;
+  let particles = [];
+  let animationId = null;
+  let paused = false;
+
+  const PARTICLE_COUNT = 50;
+  const COLORS = [
+    'rgba(96, 165, 250,',   // light blue
+    'rgba(59, 130, 246,',   // medium blue
+    'rgba(37, 99, 235,',    // vivid blue
+    'rgba(147, 197, 253,',  // pale blue
+    'rgba(255, 255, 255,',  // white
+  ];
+
+  function resize() {
+    const rect = container.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    width = rect.width;
+    height = rect.height;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    ctx.scale(dpr, dpr);
+  }
+
+  function createParticle() {
+    const color = COLORS[Math.floor(Math.random() * COLORS.length)];
+    const opacity = 0.1 + Math.random() * 0.4;
+    const radius = 1.5 + Math.random() * 3;
+    const speed = 0.15 + Math.random() * 0.35;
+    const swayAmplitude = 15 + Math.random() * 25;
+    const swaySpeed = 0.0005 + Math.random() * 0.001;
+
+    return {
+      x: Math.random() * width,
+      y: Math.random() * height,
+      radius: radius,
+      color: color,
+      opacity: opacity,
+      speed: speed,
+      swayAmplitude: swayAmplitude,
+      swaySpeed: swaySpeed,
+      swayOffset: Math.random() * Math.PI * 2,
+      baseX: Math.random() * width,
+    };
+  }
+
+  function initParticles() {
+    particles = [];
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      particles.push(createParticle());
+    }
+  }
+
+  function draw() {
+    if (paused) return;
+
+    ctx.clearRect(0, 0, width, height);
+    const now = Date.now();
+
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+
+      // Move upward
+      p.y -= p.speed;
+
+      // Horizontal sway
+      p.x = p.baseX + Math.sin(now * p.swaySpeed + p.swayOffset) * p.swayAmplitude;
+
+      // Reset when off top
+      if (p.y < -10) {
+        p.y = height + 10;
+        p.baseX = Math.random() * width;
+        p.x = p.baseX;
+      }
+
+      // Draw circle
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = p.color + p.opacity + ')';
+      ctx.fill();
+    }
+
+    animationId = requestAnimationFrame(draw);
+  }
+
+  // Static dots for reduced motion
+  function drawStatic() {
+    ctx.clearRect(0, 0, width, height);
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      const p = particles[i];
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = p.color + p.opacity + ')';
+      ctx.fill();
+    }
+  }
+
+  resize();
+  initParticles();
+
+  if (prefersReducedMotion) {
+    drawStatic();
     return;
   }
 
-  // Create the SVG element
-  const svgNS = "http://www.w3.org/2000/svg";
-  const svg = document.createElementNS(svgNS, "svg");
-  svg.setAttribute("width", "100%");
-  svg.setAttribute("height", "100%");
-  svg.setAttribute("viewBox", "0 0 1440 320");
-  svg.setAttribute("preserveAspectRatio", "none");
-  
-  // Create paths for six waves with different properties
-  const waves = [];
-  const waveColors = ["#a2d2ff", "#4d94ff", "#2a6bbd", "#a2d2ff", "#4d94ff", "#2a6bbd"];
-  const waveAmplitudes = [20, 30, 40, 20, 30, 40];
-  const waveOffsets = [0, Math.PI / 2, Math.PI, Math.PI / 2, Math.PI, 0];  // Different initial offsets for each wave
-  
-  // Create top waves
-  for (let i = 0; i < 3; i++) {
-    const path = document.createElementNS(svgNS, "path");
-    path.setAttribute("fill", waveColors[i]);
-    path.setAttribute("fill-opacity", "1");
-    svg.appendChild(path);
-    waves.push(path);
-  }
-
-  // Create bottom waves
-  for (let i = 3; i < 6; i++) {
-    const path = document.createElementNS(svgNS, "path");
-    path.setAttribute("fill", waveColors[i]);
-    path.setAttribute("fill-opacity", "1");
-    svg.appendChild(path);
-    waves.push(path);
-  }
-  
-  container.appendChild(svg);
-
-  // Animation loop
-  let offset = 0;
-
-  function animateWaves() {
-    offset += 0.01; // Slower speed by reducing increment
-
-    // Update each wave's path with different amplitude and offset
-    for (let i = 0; i < 6; i++) {
-      const amplitude = waveAmplitudes[i];
-      let yPosition;
-
-      if (i < 3) {
-        // Top waves
-        yPosition = 49 + i * 20; // Move waves higher at the top
-      } else {
-        // Bottom waves (near the bottom of the container)
-        yPosition = 240 + (i - 3) * 20; // Move waves lower at the bottom
-      }
-      
-      const d = `M0,${yPosition} C320,${yPosition + Math.sin(offset + waveOffsets[i]) * amplitude} 640,${yPosition + Math.sin(offset + waveOffsets[i] + 2) * amplitude} 960,${yPosition + Math.sin(offset + waveOffsets[i] + 4) * amplitude} 1280,${yPosition + Math.sin(offset + waveOffsets[i] + 6) * amplitude} 1440,${yPosition} L1440,320 L0,320 Z`;
-      waves[i].setAttribute("d", d);
+  // Pause when tab hidden
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      paused = true;
+      if (animationId) cancelAnimationFrame(animationId);
+    } else {
+      paused = false;
+      draw();
     }
+  });
 
-    requestAnimationFrame(animateWaves);
-  }
+  // Resize handler
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      resize();
+      // Re-distribute particles on resize
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].baseX = Math.random() * width;
+        particles[i].x = particles[i].baseX;
+        if (particles[i].y > height) particles[i].y = Math.random() * height;
+      }
+    }, 200);
+  });
 
-  animateWaves();
+  draw();
 }
 
-// Initialize the wave background on a container with ID "wave-bg"
-document.addEventListener("DOMContentLoaded", () => {
-  createWaveBackground("waves-js");
+document.addEventListener('DOMContentLoaded', () => {
+  createParticleBackground('waves-js');
 });

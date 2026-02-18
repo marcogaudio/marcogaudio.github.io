@@ -1,7 +1,10 @@
 // Styling for the footer
 footer {
-  padding: 25px 0;
+  padding: 40px 0;
   text-align: center;
+  background-color: var(--color-bg-alt, $gray-900);
+  color: var(--color-text-secondary, #6c757d);
+
   span.copyright {
     font-size: 90%;
     line-height: 40px;
@@ -26,17 +29,17 @@ ul.social-buttons {
       display: block;
       width: 40px;
       height: 40px;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
-      transition: all 0.3s;
+      transition: all var(--transition-base, 0.3s ease);
       color: white;
       border-radius: 100%;
       outline: none;
-      background-color: $gray-900;
+      background-color: var(--color-nav-bg, $gray-900);
       &:active,
       &:focus,
       &:hover {
-        background-color: $primary;
+        background-color: var(--color-primary, $primary);
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
       }
     }
   }

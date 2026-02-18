@@ -1,0 +1,16 @@
+{
+  "name": "marco-gaudio-portfolio",
+  "version": "2.0.0",
+  "description": "Marco Gaudio's personal portfolio website",
+  "private": true,
+  "scripts": {
+    "build:css": "sass scss/agency.scss css/agency.css --style=compressed --no-source-map",
+    "watch:css": "sass scss/agency.scss css/agency.css --watch --style=expanded",
+    "serve": "npx http-server . -p 3000 -o",
+    "dev": "npm run watch:css & npm run serve",
+    "build": "npm run build:css"
+  },
+  "devDependencies": {
+    "sass": "^1.71.0"
+  }
+}

@@ -115,9 +115,9 @@
   50% { opacity: 0; }
 }
 
-/* Skill bar fill */
-.will-animate.animated[data-animate="skillBar"] .skill-fill {
-  width: var(--skill-pct, 0%) !important;
+/* Skill bar — fade in card, then fill bars */
+.will-animate.animated[data-animate="skillBar"] {
+  animation-name: fadeInUp;
 }
 
 /* Reduced motion override */

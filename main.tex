@@ -1,0 +1,213 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% modern themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+%\usepackage[scale=0.8]{geometry}
+ \usepackage[left=2cm, right=2cm, top=1.7cm]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvheadnamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\name{Marco}{Gaudio} 
+
+\address{Milano (MI) - Italia}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+\phone[mobile]{+(39)3806312417}      % optional, remove / comment the line if not wanted
+%\phone[fixed]{01234 123456}                    % optional, remove / comment the line if not wanted
+%\phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
+\email{marcogaudio1997@outlook.it}                               % optional, remove / comment the line if not wanted
+\social[linkedin]{marco-gaudio}
+
+
+
+% optional, remove / comment the line if not wanted
+%\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+%\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle 
+\vspace{-20pt}
+I hold a Master's Degree in Finance and Insurance and a Bachelor's Degree in Economics, both from University of Calabria. I am studying to become a qualified actuary in Italy. Currently, I work as Actuarial Consultant in Oliver Wyman on a variety of projects including life actuarial operations, risk management, internal model development, Shiny app maintenance and development, IFRS 17 strategic plan and forecast. I am really keen on data, programming and advanced analytics. I worked on data science projects, improving skills in programming languages such as R, Python and VBA.\\
+
+
+
+\section{Work Experience}
+\vspace{4pt}
+\begin{itemize}
+\item{\cventry{February 2024 -- Present}{General Reinsurance, Milan, Italy}{Actuarial Analyst}{}{}{\vspace{3pt}}
+\begin{itemize}
+\item Developing pricing models for life and health insurance products (CQ, CPI, term life) within the L\&H Pricing team.
+\item Profit testing and experience monitoring across mortality, morbidity, and underwriting risks.
+\item Maintaining risk databases and applying advanced analytics (R, Python, SQL) to extract insights and automate processes.
+\item Building predictive models and presenting actuarial reports to internal and external stakeholders.
+\end{itemize}
+\vspace{8pt}
+
+\item{\cventry{June 2022 -- January 2024}{Oliver Wyman, Milan, Italy}{Actuarial Consultant}{}{}{\vspace{0pt}}
+\begin{itemize}
+\item Supporting life actuarial operation in product analysis, data migration and system integration.
+\item Supporting internal model development (Operational Risk) with R for a large Italian insurance group. 
+\item Developing and maintaining R-based framework (Shiny) for KPIs production and monitoring.
+\item Supporting the preparation of IFRS 17 strategic plan and forecast with the development of VBA automated tools.
+
+\end{itemize}
+\vspace{8pt}
+
+
+\item{\cventry{February 2021 -- November 2021 }{General Reinsurance, Milan, Italy}{Actuarial Pricing - Intern}{}{}{\vspace{3pt} 
+\begin{itemize}
+\item Monitoring L\&H insurance portfolios by developing functions, automated scripts and data visualization tools with R in order to speed up the product pricing process. 
+\item Analysing SDO (Schede di dimissioni ospedaliere) database to gain useful information in order to develop new products and improve existing ones. 
+\end{itemize}
+}}
+
+\vspace{4pt}
+
+
+\end{itemize}
+
+\section{Education}
+
+\vspace{4pt}
+
+\begin{itemize}
+
+\item{\cventry{2024 -- 2025}{University of Calabria, Rende (CS)}{Second-level Master in AI \& Data Science}{}{}{\vspace{3pt}}
+\begin{itemize}
+\item Final vote: 110/110.
+\item II Livel (post-graduate) program: 60 CFU over 1 year (1,500 hours total).
+\item Courses: Statistical \& Machine Learning, Deep Learning, NLP, Text Mining, Database Management, Predictive Modelling, Neural Networks, Tree-based Models, AI Tools \& Applications.
+\item 400-hour company internship (16 CFU) + final project work.
+\end{itemize}
+}
+
+\item{\cventry{September 2019 -- October 2021}{University of Calabria, Rende (CS)}{Master's Degree in Finance and Insurance}{}{}{\vspace{3pt} 
+\begin{itemize}
+\item Final vote: 110/110 cum laude.
+\item Thesis: "Machine Learning techniques in non-life insurance pricing".The aim of the thesis is to analyze the performance of some machine learning algorithms in the non-life pricing process and compare them with state-of-the-art models (GLM and GAM).
+\item Main skills acquired: Non-Life Insurance Mathematics, Risk Theory, Life Insurance Mathematics, Financial Econometrics, Financial Markets, Quantitative Finance. All the courses were taught in English.
+\end{itemize}
+}}
+
+\item{\cventry{September 2016 -- July 2019}{University of Calabria, Rende (CS)}{Bachelor's Degree in Economics}{}{}{\vspace{3pt} 
+\begin{itemize}
+\item Final vote: 100/110.
+\item Main skills acquired: Mathematics, Financial Mathematics, Statistics, Microeconomics, Macroeconomics.
+\end{itemize}
+}}
+
+\vspace{4pt}
+%
+%\item{\cventry{Settembre 2016 -- Luglio 2019}{Università %della Calabria, Rende (CS)}{Laurea Triennale in Economia.}%{}{}{\vspace{3pt} 
+%\begin{itemize}
+%\item Votazione Finale: 100/110.
+%\item Titolo tesi: "Le banche d'investimento e la %creazione di valore: un'analisi delle acquisizioni %Europee". Il lavoro si prefigge l'obiettivo di analizzare %il ruolo  giocato dalle banche d'investimento nelle %operazioni di fusione e acquisizione in Europa, %quest'ultima caratterizzata da Paesi con regimi legali %differenti.
+%\item Principali competenze maturate in: Metodi Matematici %per l'Economia, Matematica Finanziaria, Statistica, %Tecniche e Gestione degli Investimenti, Microeconomia, %Macroeconomia.
+%\end{itemize}
+%}}
+
+
+\vspace{4pt}
+
+
+\end{itemize}
+
+
+\vspace{22pt}
+
+
+
+\section{Competences and Skills}
+\begin{itemize}
+\item \textbf{Programming Languages:}
+\begin{itemize}
+    \item R (proficient): packages, dashboards (shiny) and reports (Rmarkdown) development, historical series analysis, Monte Carlo methods, data manipulation and visualization, implementation of ARMA, VAR, ARCH, GARCH models. 
+    %Ottima padronanza dei pacchetti tidyverse per manipolazione e visualizzazione di dati.
+    %Pacchetti utilizzati in R:   dplyr, ggplot2, readr, tidyr, xts, quantmod, tseries, MatrixStats, vars,  Rsolnp, rugarch, lifecontingencies, actuar.
+    \item Python (intermediate): data manipulation, visualization, and machine learning. Libraries used: pandas, numpy, matplotlib, scikit-learn.
+    \item SQL: data querying, aggregation, and database management.
+
+\end{itemize}
+\vspace{1pt}
+
+\item \textbf{Data \& AI Tools:} Databricks (data engineering and ML pipelines), RAG and AI Systems (retrieval-augmented generation, LLM integration), Machine Learning (supervised/unsupervised methods, model evaluation).
+
+\item \textbf{Microsoft Office:} In-depth knowledge of Excel, VBA, PowerPoint and Word. Good knowledge of Access.
+
+\item \textbf{Soft Skills:} Organization and problem solving skills. Ability to work in a team and under pressure in order to meet tight deadlines.
+
+\end{itemize}
+
+\vspace{1}
+
+\section{Languages}
+
+\vspace{1pt}
+\begin{itemize}
+\item \textbf{Italian:} Native language.
+
+\vspace{1pt}
+
+\item \textbf{English:} Fluent, Professional knowledge.
+
+\vspace{1pt}
+
+\end{itemize}
+\section{Other Info}
+\begin{itemize}
+    \item Driver License (tipo B).
+\end{itemize}
+
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+%-----       letter       ---------------------------------------------------------
+
+\end{document}
+
+
+%% end of file `template.tex'.

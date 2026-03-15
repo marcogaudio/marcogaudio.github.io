@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal portfolio website for Marco Gaudio (reinsurance pricing actuary), hosted on GitHub Pages at **www.yan-holtz.com** (see `CNAME`). Based on the Start Bootstrap "Agency" theme with Bootstrap 3, jQuery, and custom JavaScript.
+Personal portfolio website for Marco Gaudio (reinsurance pricing actuary), hosted on GitHub Pages at **marcogaudio.github.io**. Based on the Start Bootstrap "Agency" theme with Bootstrap 3, jQuery, and custom JavaScript.
 
 ## Build System
 

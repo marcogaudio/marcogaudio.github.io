@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <rect width="240" height="60" fill="#ffffff" rx="4"/>
+  <rect width="8" height="60" fill="#c00000" rx="0"/>
+  <text x="130" y="38" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Oliver Wyman</text>
+</svg>

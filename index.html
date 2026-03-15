@@ -37,7 +37,7 @@
 
   <!-- Custom fonts -->
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Kaushan+Script&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100;300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 
   <!-- Modern CSS (load before agency.css) -->
   <link href="css/modern-variables.css" rel="stylesheet">
@@ -58,6 +58,13 @@
     crossorigin=""></script>
 
 <style>
+/* Hero background — dark dot grid */
+.masthead {
+  background-color: #0f0a1e;
+  background-image: radial-gradient(circle, rgba(167, 139, 250, 0.25) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
 /* Horizontal Timeline */
 .h-timeline {
   position: relative;
@@ -242,19 +249,19 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#description">Intro</a>
+            <a class="nav-link js-scroll-trigger" href="#description">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+            <a class="nav-link js-scroll-trigger" href="#experience">Work</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+            <a class="nav-link js-scroll-trigger" href="#education">Background</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+            <a class="nav-link js-scroll-trigger" href="#skills">Toolkit</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+            <a class="nav-link js-scroll-trigger" href="#portfolio">Projects</a>
           </li>
         </ul>
       </div>
@@ -265,8 +272,10 @@
   <!-- =======================  LANDING SECTION ======================= -->
 
 <header class="masthead" id="page-top">
-  <div id="waves-js"></div>
   <div class="textlanding">
+    <img src="img/team/photo_MG.jpg" alt="Marco Gaudio"
+      style="width:90px;height:90px;border-radius:50%;object-fit:cover;
+             border:3px solid rgba(167,139,250,0.6);margin-bottom:16px;display:block;margin-left:auto;margin-right:auto;">
     <p style="display:inline; font-size: 35px; padding-left: 10px">MARCO</p>
     <p style="display:inline; font-size: 35px">GAUDIO</p>
     <hr style="width: 250px; height: 2px; border:none;color:#333;background-color:rgba(255,255,255,0.3);">
@@ -293,7 +302,7 @@
   </div>
   <div class="arrowlanding">
     <a class="js-scroll-trigger" href="#description" aria-label="Scroll down">
-      <p style="font-size: 80px; color: #60a5fa">&#xfe40;</p>
+      <p style="font-size: 80px; color: #a78bfa">&#xfe40;</p>
     </a>
   </div>
 </header>
@@ -307,11 +316,7 @@
     <div class="container">
 
       <div class="row" data-animate="fadeInUp">
-        <div class="col-lg-4 text-center">
-          <img class="img-fluid" src="img/team/photo_MG.jpg" alt="Marco Gaudio profile picture"
-            style="margin-bottom: 30px; border-radius: var(--radius-lg, 16px);">
-        </div>
-        <div class="col-lg-8 text-center text-md-left">
+        <div class="col-lg-10 mx-auto text-center text-md-left">
           <p>Hello, I am Marco.</p>
           <p>I hold a Second-level Master in AI &amp; Data Science, a Master's in Finance &amp; Insurance, and a Bachelor's in Economics,
           all from the University of Calabria. I currently work as <b>Actuarial Pricing Analyst</b> at
@@ -341,11 +346,95 @@
   </section>
 
 
+<!-- =======================  EXPERIENCE SECTION ======================= -->
+<section id="experience" class="bg-light py-5" aria-label="Work">
+  <div class="container">
+    <div class="text-center text-md-left mb-4" data-animate="fadeInUp">
+      <h2>Work</h2>
+      <p>My professional journey in the actuarial and insurance industry.</p>
+    </div>
+
+    <div class="h-timeline" data-animate="fadeInUp" data-animate-delay="100">
+      <div class="h-timeline-line"></div>
+      <div class="h-timeline-items">
+        <div class="h-timeline-item" data-detail="exp-0">
+          <div class="h-timeline-node"></div>
+          <div class="h-timeline-label">
+            <span class="h-timeline-date">Feb 2024 &ndash; Present</span>
+            <strong>Actuarial Analyst</strong>
+            <span>Gen Re, Milan</span>
+          </div>
+        </div>
+        <div class="h-timeline-item" data-detail="exp-1">
+          <div class="h-timeline-node"></div>
+          <div class="h-timeline-label">
+            <span class="h-timeline-date">Jun 2022 &ndash; Jan 2024</span>
+            <strong>Actuarial Consultant</strong>
+            <span>Oliver Wyman, Milan</span>
+          </div>
+        </div>
+        <div class="h-timeline-item" data-detail="exp-3">
+          <div class="h-timeline-node"></div>
+          <div class="h-timeline-label">
+            <span class="h-timeline-date">Feb 2021 &ndash; Nov 2021</span>
+            <strong>Actuarial Pricing Intern</strong>
+            <span>Gen Re, Milan</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="h-timeline-detail" id="exp-detail"></div>
+  </div>
+</section>
+
+
+<!-- =======================  EDUCATION SECTION ======================= -->
+<section id="education" class="bg-light py-5" aria-label="Background">
+  <div class="container">
+    <div class="text-center text-md-left mb-4" data-animate="fadeInUp">
+      <h2>Background</h2>
+      <p>My academic journey, which shaped my foundation in actuarial science, finance, and analytics.</p>
+    </div>
+
+    <div class="h-timeline" data-animate="fadeInUp" data-animate-delay="100">
+      <div class="h-timeline-line"></div>
+      <div class="h-timeline-items">
+        <div class="h-timeline-item" data-detail="edu-0">
+          <div class="h-timeline-node"></div>
+          <div class="h-timeline-label">
+            <span class="h-timeline-date">2024 &ndash; 2025</span>
+            <strong>2nd-Level Master &mdash; AI &amp; Data Science</strong>
+            <span>UniCal &mdash; 110/110</span>
+          </div>
+        </div>
+        <div class="h-timeline-item" data-detail="edu-1">
+          <div class="h-timeline-node"></div>
+          <div class="h-timeline-label">
+            <span class="h-timeline-date">2019 &ndash; 2021</span>
+            <strong>M.Sc. Finance &amp; Insurance</strong>
+            <span>UniCal &mdash; 110/110 cum laude</span>
+          </div>
+        </div>
+        <div class="h-timeline-item" data-detail="edu-2">
+          <div class="h-timeline-node"></div>
+          <div class="h-timeline-label">
+            <span class="h-timeline-date">2016 &ndash; 2019</span>
+            <strong>B.Sc. Economics</strong>
+            <span>UniCal &mdash; 100/110</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="h-timeline-detail" id="edu-detail"></div>
+  </div>
+</section>
+
+
   <!-- =======================  SKILLS SECTION ======================= -->
-  <section id="skills" class="bg-light py-5" aria-label="Skills">
+  <section id="skills" class="bg-light py-5" aria-label="Toolkit">
     <div class="container">
       <div class="text-center text-md-left mb-4" data-animate="fadeInUp">
-        <h2>Skills</h2>
+        <h2>Toolkit</h2>
         <p>Technical competencies and tools I work with daily.</p>
       </div>
 
@@ -387,97 +476,13 @@
   </section>
 
 
-<!-- =======================  EXPERIENCE SECTION ======================= -->
-<section id="experience" class="bg-light py-5" aria-label="Experience">
-  <div class="container">
-    <div class="text-center text-md-left mb-4" data-animate="fadeInUp">
-      <h2>Experience</h2>
-      <p>My professional journey in the actuarial and insurance industry.</p>
-    </div>
-
-    <div class="h-timeline" data-animate="fadeInUp" data-animate-delay="100">
-      <div class="h-timeline-line"></div>
-      <div class="h-timeline-items">
-        <div class="h-timeline-item" data-detail="exp-0">
-          <div class="h-timeline-node"></div>
-          <div class="h-timeline-label">
-            <span class="h-timeline-date">Feb 2024 &ndash; Present</span>
-            <strong>Actuarial Analyst</strong>
-            <span>Gen Re, Milan</span>
-          </div>
-        </div>
-        <div class="h-timeline-item" data-detail="exp-1">
-          <div class="h-timeline-node"></div>
-          <div class="h-timeline-label">
-            <span class="h-timeline-date">Jun 2022 &ndash; Jan 2024</span>
-            <strong>Actuarial Consultant</strong>
-            <span>Oliver Wyman, Milan</span>
-          </div>
-        </div>
-        <div class="h-timeline-item" data-detail="exp-3">
-          <div class="h-timeline-node"></div>
-          <div class="h-timeline-label">
-            <span class="h-timeline-date">Feb 2021 &ndash; Nov 2021</span>
-            <strong>Actuarial Pricing Intern</strong>
-            <span>Gen Re, Milan</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="h-timeline-detail" id="exp-detail"></div>
-  </div>
-</section>
-
-
-<!-- =======================  EDUCATION SECTION ======================= -->
-<section id="education" class="bg-light py-5" aria-label="Education">
-  <div class="container">
-    <div class="text-center text-md-left mb-4" data-animate="fadeInUp">
-      <h2>Education</h2>
-      <p>My academic journey, which shaped my foundation in actuarial science, finance, and analytics.</p>
-    </div>
-
-    <div class="h-timeline" data-animate="fadeInUp" data-animate-delay="100">
-      <div class="h-timeline-line"></div>
-      <div class="h-timeline-items">
-        <div class="h-timeline-item" data-detail="edu-0">
-          <div class="h-timeline-node"></div>
-          <div class="h-timeline-label">
-            <span class="h-timeline-date">2024 &ndash; 2025</span>
-            <strong>2nd-Level Master &mdash; AI &amp; Data Science</strong>
-            <span>UniCal &mdash; 110/110</span>
-          </div>
-        </div>
-        <div class="h-timeline-item" data-detail="edu-1">
-          <div class="h-timeline-node"></div>
-          <div class="h-timeline-label">
-            <span class="h-timeline-date">2019 &ndash; 2021</span>
-            <strong>M.Sc. Finance &amp; Insurance</strong>
-            <span>UniCal &mdash; 110/110 cum laude</span>
-          </div>
-        </div>
-        <div class="h-timeline-item" data-detail="edu-2">
-          <div class="h-timeline-node"></div>
-          <div class="h-timeline-label">
-            <span class="h-timeline-date">2016 &ndash; 2019</span>
-            <strong>B.Sc. Economics</strong>
-            <span>UniCal &mdash; 100/110</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="h-timeline-detail" id="edu-detail"></div>
-  </div>
-</section>
-
-
   <!-- ======================== PORTFOLIO SECTION ============================ -->
 
-  <section class="bg-light" id="portfolio" aria-label="Portfolio" data-glow>
+  <section class="bg-light" id="portfolio" aria-label="Projects" data-glow>
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center" data-animate="fadeInUp">
-          <h2 class="section-heading text-uppercase">Portfolio</h2>
+          <h2 class="section-heading text-uppercase">Projects</h2>
           <h3 class="section-subheading text-muted">A glimpse of the projects I've been working on</h3>
         </div>
       </div>
